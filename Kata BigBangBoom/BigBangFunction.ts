@@ -3,16 +3,27 @@ function BigBang(number: number) : string {
 
    if(number %5 === 0)
    {
-      result += 'Big'
+      if(number %2 === 0) {
+         result = 'Big' + result
+      } else {
+         result += 'Big'
+      }
    }
    if(number %7 === 0)
    {
-      result += 'Bang'
+      if(number %2 === 0) {
+         result = 'Bang' + result
+      } else {
+         result += 'Bang'
+      }
    }
    if(number %11 === 0)
    {
-      result += 'Boom'
-   }
+      if(number %2 === 0) {
+         result = 'Boom' + result
+      } else {
+         result += 'Boom'
+      }   }
    if(result === "")
    {
       result = number.toString()
