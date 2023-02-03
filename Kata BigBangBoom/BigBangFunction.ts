@@ -3,15 +3,15 @@ function BigBang(number: number) : string {
 
    if(number %5 === 0)
    {
-      result = 'Big'
+      result += 'Big'
    }
    if(number %7 === 0)
    {
-      result = 'Bang'
+      result += 'Bang'
    }
    if(number %11 === 0)
    {
-      result = 'Boom'
+      result += 'Boom'
    }
    if(result === "")
    {
