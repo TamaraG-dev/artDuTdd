@@ -1,5 +1,17 @@
 function BigBang(number) {
     var result = "";
+    if (number % 5 === 0) {
+        result = 'Big';
+    }
+    if (number % 7 === 0) {
+        result = 'Bang';
+    }
+    if (number % 11 === 0) {
+        result = 'Boom';
+    }
+    if (result === "") {
+        result = number.toString();
+    }
     return result;
 }
 console.log(BigBang(1) === '1' ? true : false);
