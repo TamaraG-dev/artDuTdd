@@ -23,16 +23,36 @@ function isEven(number, currentString, action) {
     }
     return currentString;
 }
-console.log(BigBang(1) === '1' ? true : false);
-console.log(BigBang(2) === '2' ? true : false);
-console.log(BigBang(5) === 'Big' ? true : false);
-console.log(BigBang(7) === 'Bang' ? true : false);
-console.log(BigBang(11) === 'Boom' ? true : false);
-console.log(BigBang(22) === 'Boom' ? true : false);
-console.log(BigBang(35) === 'BigBang' ? true : false);
-console.log(BigBang(70) === 'BangBig' ? true : false);
-console.log(BigBang(55) === 'BigBoom' ? true : false);
-console.log(BigBang(110) === 'BoomBig' ? true : false);
-console.log(BigBang(77) === 'BangBoom' ? true : false);
-console.log(BigBang(385) === 'BigBangBoom' ? true : false);
-console.log(BigBang(770) === 'BoomBangBig' ? true : false);
+function allTests() {
+    if (!test(1, '1'))
+        return 'test KO with 1';
+    if (!test(2, '2'))
+        return 'test KO with 2';
+    if (!test(5, 'Big'))
+        return 'test KO with 5';
+    if (!test(7, 'Bang'))
+        return 'test KO with 7';
+    if (!test(11, 'Boom'))
+        return 'test KO with 11';
+    if (!test(22, 'Boom'))
+        return 'test KO with 22';
+    if (!test(35, 'BigBang'))
+        return 'test KO with 35';
+    if (!test(70, 'BangBig'))
+        return 'test KO with 70';
+    if (!test(55, 'BigBoom'))
+        return 'test KO with 55';
+    if (!test(110, 'BoomBig'))
+        return 'test KO with 110';
+    if (!test(77, 'BangBoom'))
+        return 'test KO with 77';
+    if (!test(385, 'BigBangBoom'))
+        return 'test KO with 385';
+    if (!test(770, 'BoomBangBig'))
+        return 'test KO with 770';
+    return "all tests are good";
+}
+function test(number, expectedResult) {
+    return BigBang(number) === expectedResult ? true : false;
+}
+console.log(allTests());
