@@ -3,33 +3,32 @@ function BigBang(number: number) : string {
 
    if(number %5 === 0)
    {
-      if(number %2 === 0) {
-         result = 'Big' + result
-      } else {
-         result += 'Big'
-      }
+      result = isEven(number, result, 'Big')
    }
    if(number %7 === 0)
    {
-      if(number %2 === 0) {
-         result = 'Bang' + result
-      } else {
-         result += 'Bang'
-      }
+      result = isEven(number, result, 'Bang')
    }
    if(number %11 === 0)
    {
-      if(number %2 === 0) {
-         result = 'Boom' + result
-      } else {
-         result += 'Boom'
-      }   }
+      result = isEven(number, result, 'Boom')
+   }
    if(result === "")
    {
       result = number.toString()
    }
 
    return result
+}
+
+function isEven(number: number, currentString: string, action: string) : string {
+   if(number %2 === 0) {
+      currentString = action + currentString
+   } else {
+      currentString += action
+   }   
+
+   return currentString
 }
 
 console.log(BigBang(1) === '1'? true : false) 
