@@ -23,36 +23,53 @@ function isEven(number, currentString, action) {
     }
     return currentString;
 }
-function allTests() {
-    if (!test(1, '1'))
-        return 'test KO with 1';
-    if (!test(2, '2'))
-        return 'test KO with 2';
-    if (!test(5, 'Big'))
-        return 'test KO with 5';
-    if (!test(7, 'Bang'))
-        return 'test KO with 7';
-    if (!test(11, 'Boom'))
-        return 'test KO with 11';
-    if (!test(22, 'Boom'))
-        return 'test KO with 22';
-    if (!test(35, 'BigBang'))
-        return 'test KO with 35';
-    if (!test(70, 'BangBig'))
-        return 'test KO with 70';
-    if (!test(55, 'BigBoom'))
-        return 'test KO with 55';
-    if (!test(110, 'BoomBig'))
-        return 'test KO with 110';
-    if (!test(77, 'BangBoom'))
-        return 'test KO with 77';
-    if (!test(385, 'BigBangBoom'))
-        return 'test KO with 385';
-    if (!test(770, 'BoomBangBig'))
-        return 'test KO with 770';
-    return "all tests are good";
-}
 function test(number, expectedResult) {
     return BigBang(number) === expectedResult ? true : false;
+}
+function returnTestResult(number, expectedResult) {
+    return (!test(number, expectedResult) ? 'test KO with ' + expectedResult : 'nextTest');
+}
+function allTests() {
+    var testResult;
+    testResult = returnTestResult(1, '1');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(2, '2');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(5, 'Big');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(7, 'Bang');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(11, 'Boom');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(22, 'Boom');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(35, 'BigBang');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(70, 'BangBig');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(55, 'BigBoom');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(110, 'BoomBig');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(77, 'BangBoom');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(385, 'BigBangBoom');
+    if (testResult !== 'nextTest')
+        return testResult;
+    testResult = returnTestResult(770, 'BoomBangBig');
+    if (testResult !== 'nextTest')
+        return testResult;
+    return "all tests are good";
 }
 console.log(allTests());
